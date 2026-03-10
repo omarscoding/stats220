@@ -27,6 +27,6 @@ https://www.last.fm/user/omarsmusic
 
 ### This is a visual representation of me making my spotify playlists
 
-![](https://tenor.com/bO6mt.gif)
+![](https://media1.tenor.com/m/dxPl_UoR8J0AAAAd/fire-writing.gif)
 
-A meme that captures how I currently feel about my university studies is ![]([https://c.tenor.com/8druEACXtX8AAAAd/tenor.gif](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHhoaGZpNTF2Y25mYmprZHI2eGhic3U0bnY2eTFueHk2MHJjM3A4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KF805ZQdrhecMj9iCm/giphy.gif))
+A meme that captures how I currently feel about my university studies is ![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHhoaGZpNTF2Y25mYmprZHI2eGhic3U0bnY2eTFueHk2MHJjM3A4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KF805ZQdrhecMj9iCm/giphy.gif)
