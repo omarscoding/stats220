@@ -23,7 +23,7 @@
 
 #### Heres a link to my last.fm
 
-![last.fm](https://www.last.fm/user/omarsmusic)
+[last.fm](https://www.last.fm/user/omarsmusic)
 
 ### This is a visual representation of me making my spotify playlists
 
