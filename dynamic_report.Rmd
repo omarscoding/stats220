@@ -53,11 +53,13 @@ The following charts show the distribution of noise levels and the times when th
 ```{r charts}
 ggplot(latest_data, aes(x = noise_level, fill = noise_level)) +
   geom_bar() +
-  labs(title = "Distribution of Noise Levels", x = "Noise Description", y = "Count") +
+  labs(title = "Distribution of Noise Levels", x = "Noise Description", y = "Count",
+       caption = "Source: IC3 observational data collected via Google Form") +
   theme_minimal()
 
 ggplot(latest_data, aes(x = time_of_day, fill = time_of_day)) +
   geom_bar() +
-  labs(title = "Observations by Time of Day", x = "Time Period", y = "Count") +
+  labs(title = "Observations by Time of Day", x = "Time Period", y = "Count",
+       caption = "Source: IC3 observational data collected via Google Form") +
   theme_minimal()
 ```
