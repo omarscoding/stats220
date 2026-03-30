@@ -1,0 +1,61 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+```
+
+```{css}
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+h2 {
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+```
+
+## IC3 Study Environment Tracking
+
+This report tracks observations of seat availability and noise levels in the IC3 study space. The data is collected through a Google Form and updated dynamically.
+
+```{r data_processing}
+library(tidyverse)
+file <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vRkFZzJSUqhlUpl_1ivwLrWS3zQcWhlVfIyF-KC_Lhsbc6O3w4Mbp9x10NOvznU_efAe793qGk7aaAS/pub?output=csv"
+logged_data <- read_csv(file)
+
+latest_data <- logged_data %>%
+  rename(
+    free_seats = `How many seats are currently free in IC3? (enter a number between 0 and 200)`,
+    activity = `What are the people around you doing in IC3?`,
+    noise_level = `How would you describe the overall noise level around you in IC3?`,
+    time_of_day = `What time of day is it?`
+  )
+
+avg_seats <- round(mean(latest_data$free_seats, na.rm = TRUE), 1)
+total_obs <- nrow(latest_data)
+```
+
+### Observation Summary
+
+So far, I have recorded `r total_obs` observations in the IC3 study area. On average, there are about `r avg_seats` free seats available when I visit.
+
+### Noise Levels and Timing
+
+The following charts show the distribution of noise levels and the times when these observations were recorded.
+
+```{r charts}
+ggplot(latest_data, aes(x = noise_level, fill = noise_level)) +
+  geom_bar() +
+  labs(title = "Distribution of Noise Levels", x = "Noise Description", y = "Count") +
+  theme_minimal()
+
+ggplot(latest_data, aes(x = time_of_day, fill = time_of_day)) +
+  geom_bar() +
+  labs(title = "Observations by Time of Day", x = "Time Period", y = "Count") +
+  theme_minimal()
+```
