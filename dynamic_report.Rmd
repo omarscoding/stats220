@@ -36,7 +36,7 @@ latest_data <- logged_data %>%
     time_of_day = `What time of day is it?`
   )
 
-avg_seats <- round(mean(latest_data$free_seats, na.rm = TRUE), 1)
+avg_seats <- round(mean(latest_data$free_seats, na.rm = TRUE), 0)
 total_obs <- nrow(latest_data)
 min_seats <- min(latest_data$free_seats, na.rm = TRUE)
 max_seats <- max(latest_data$free_seats, na.rm = TRUE)
