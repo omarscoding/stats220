@@ -38,11 +38,13 @@ latest_data <- logged_data %>%
 
 avg_seats <- round(mean(latest_data$free_seats, na.rm = TRUE), 1)
 total_obs <- nrow(latest_data)
+min_seats <- min(latest_data$free_seats, na.rm = TRUE)
+max_seats <- max(latest_data$free_seats, na.rm = TRUE)
 ```
 
 ### Observation Summary
 
-So far, I have recorded `r total_obs` observations in the IC3 study area. On average, there are about `r avg_seats` free seats available when I visit.
+So far, I have recorded `r total_obs` observations in the IC3 study area. On average, there are about `r avg_seats` free seats available when I visit, ranging from a low of `r min_seats` to a high of `r max_seats`.
 
 ### Noise Levels and Timing
 
