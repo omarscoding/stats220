@@ -21,10 +21,12 @@ h2 {
 
 ## IC3 Study Environment Tracking
 
-This report tracks observations of seat availability and noise levels in the IC3 study space. The data is collected through a Google Form and updated dynamically.
+This report tracks observations of seat availability, noise levels, and student activities in the IC3 study space. The data is collected through a Google Form and updated dynamically.
 
 ```{r data_processing}
 library(tidyverse)
+library(stringr)
+
 file <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vRkFZzJSUqhlUpl_1ivwLrWS3zQcWhlVfIyF-KC_Lhsbc6O3w4Mbp9x10NOvznU_efAe793qGk7aaAS/pub?output=csv"
 logged_data <- read_csv(file)
 
@@ -48,7 +50,7 @@ So far, I have recorded `r total_obs` observations in the IC3 study area. On ave
 
 ### Noise Levels and Timing
 
-The following charts show the distribution of noise levels and the times when these observations were recorded.
+The following charts show the distribution of noise levels and what activities are most common in IC3.
 
 ```{r charts}
 ggplot(latest_data, aes(x = noise_level, fill = noise_level)) +
@@ -57,9 +59,9 @@ ggplot(latest_data, aes(x = noise_level, fill = noise_level)) +
        caption = "Source: IC3 observational data collected via Google Form") +
   theme_minimal()
 
-ggplot(latest_data, aes(x = time_of_day, fill = time_of_day)) +
+ggplot(latest_data, aes(x = str_wrap(activity, 15), fill = str_wrap(activity, 15))) +
   geom_bar() +
-  labs(title = "Observations by Time of Day", x = "Time Period", y = "Count",
-       caption = "Source: IC3 observational data collected via Google Form") +
+    labs(title = "Distribution of Peoples Activities", x = "Activity", y = "Count",
+      fill = "activity", caption = "Source: IC3 observational data collected via Google Form") +
   theme_minimal()
 ```
